@@ -1,0 +1,23 @@
+@import url('variables.css');
+@import url('reset.css');
+
+*::-webkit-scrollbar {
+  background-color: var(--color-dark--lighter);
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 100000px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-dark--darker);
+  border-radius: 8px;
+}
+
+.sr-only {
+  position: absolute;
+  left: -300vw;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

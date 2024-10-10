@@ -5,7 +5,7 @@
 
   --color-light: #efefef;
   --color-light--lighter: color-mix(in srgb, var(--color-light), white 90%);
-  --color-light--darker: color-mix(in srgb, var(--color-light), black 15%);
+  --color-light--darker: color-mix(in srgb, var(--color-light), black 25%);
 
   --color-primary: #aa0000;
   --color-primary--lighter: color-mix(in srgb, var(--color-primary), white 20%);

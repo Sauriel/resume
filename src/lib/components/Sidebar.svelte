@@ -1,5 +1,5 @@
 <aside>
-  <Hexagon size="16rem" class="hex-header">
+  <Hexagon size="16rem" color="var(--color-dark)" class="hex-header">
     <SaurielLogo />
   </Hexagon>
   <div id="content">
@@ -10,11 +10,10 @@
 
 <style>
   aside {
+    grid-area: sidebar;
     position: relative;
-    width: 20rem;
-    height: calc(100dvh - 10rem);
-    margin-top: 10rem;
     padding-top: 8rem;
+    border-top-right-radius: 0.5rem;
     background-color: var(--color-primary);
     background-image: radial-gradient(
       ellipse at left,
@@ -29,7 +28,6 @@
     left: 50%;
     translate: -50%;
     padding: 3rem;
-    background-color: var(--color-dark);
   }
 
   #content {

@@ -14,18 +14,16 @@
   }
 
   .experience {
-    --local-data-width: 1.75em;
     height: 1em;
-    width: calc(6 * var(--local-data-width));
     display: flex;
     justify-content: space-between;
+    gap: 0.25em;
   }
 
   .experience > div {
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     display: inline-block;
     height: 1em;
-    width: var(--local-data-width);
     border: 2px solid var(--color-light);
   }
 

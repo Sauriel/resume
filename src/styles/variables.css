@@ -8,6 +8,8 @@
   --color-light--darker: color-mix(in srgb, var(--color-light), black 15%);
 
   --color-primary: #aa0000;
-  --color-primary--lighter: color-mix(in srgb, var(--color-primary), white 10%);
+  --color-primary--lighter: color-mix(in srgb, var(--color-primary), white 20%);
   --color-primary--darker: color-mix(in srgb, var(--color-primary), black 20%);
+
+  --scrollbar-width: 0.5rem;
 }

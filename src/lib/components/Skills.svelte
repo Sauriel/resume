@@ -1,8 +1,10 @@
 <section id="skills">
   <header>Tech Skills</header>
-  {#each skills as skill (skill.id)}
-    <Skill {skill} />
-  {/each}
+  <div class="skill-list">
+    {#each skills as skill (skill.id)}
+      <Skill {skill} />
+    {/each}
+  </div>
   <footer>
     <span>1 Jahr</span>
     <span>2 Jahre</span>
@@ -14,14 +16,20 @@
 
 <style>
   #skills {
+    --exp-width: 10em;
+  }
+  .skill-list {
     display: grid;
     grid-template-areas: 'skill experience';
+    grid-template-columns: auto var(--exp-width);
     column-gap: 1em;
     row-gap: 0.5em;
+    max-height: 360px;
+    overflow-x: auto;
+    padding-right: 0.5em;
   }
 
   header {
-    grid-column: 1 / span 2;
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
@@ -31,7 +39,10 @@
   }
 
   footer {
-    grid-column-start: 2;
+    width: var(--exp-width);
+    margin-top: 0.5em;
+    margin-left: auto;
+    margin-right: calc(0.5em + var(--scrollbar-width));
     display: flex;
     justify-content: space-between;
   }

@@ -2,15 +2,15 @@
 @import url('reset.css');
 
 *::-webkit-scrollbar {
-  background-color: var(--color-dark--lighter);
-  width: 0.75rem;
-  height: 0.75rem;
+  background-color: var(--color-light);
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
   border-radius: 100000px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--color-dark--darker);
-  border-radius: 8px;
+  background-color: var(--color-dark);
+  border-radius: 100000px;
 }
 
 .sr-only {

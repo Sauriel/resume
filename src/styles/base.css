@@ -21,3 +21,84 @@
   height: 1px;
   overflow: hidden;
 }
+
+p:first-of-type {
+  margin-top: 0;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+.tooltip {
+  --sgn: clamp(-1, (var(--j) - var(--i))/0.1, 1);
+  --dir: calc(var(--sgn) * (var(--j) - 2 * var(--i)) * 180deg); /* bg direction */
+  --oxy: calc(var(--i) * 100%) calc(var(--j) * 100%);
+  --i: 0;
+  --j: 0;
+  border: solid 0.75em transparent;
+  padding: 0.5em 1em;
+  background:
+    linear-gradient(var(--color-light) 0 0) padding-box,
+    conic-gradient(
+        from calc(var(--dir) - 0.5 * 90deg) at var(--oxy),
+        var(--color-light) 90deg,
+        transparent 0%
+      )
+      var(--oxy) / 50% 50% no-repeat border-box;
+  color: var(--color-dark);
+  filter: drop-shadow(2px 2px 5px #363636);
+  transition: 0.35s filter;
+  border-radius: calc(0.75em + 7px);
+}
+
+.tooltip--bottom {
+  --i: 0.5;
+  --j: 0;
+}
+
+.tooltip--left {
+  --i: 1;
+  --j: 0.5;
+}
+
+.tooltip--top {
+  --i: 0.5;
+  --j: 1;
+}
+
+.tooltip--right {
+  --i: 0;
+  --j: 0.5;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+[popovertarget] {
+  anchor-name: var(--popover-trigger);
+  cursor: help;
+}
+
+[popover] {
+  --margin: 0 8px;
+  margin: var(--margin);
+  position: absolute;
+  position-anchor: var(--popover-trigger);
+  /* inset-area: right; */
+  /* position-try: --bottom, --left; */
+  inset-area: top;
+  --i: 0.5;
+  --j: 1;
+}
+
+/* @position-try --bottom {
+  margin: var(--margin);
+  inset-area: bottom;
+}
+
+@position-try --left {
+  margin: var(--margin);
+  inset-area: left;
+} */

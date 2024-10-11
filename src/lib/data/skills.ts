@@ -1,8 +1,4 @@
-export type Skill = {
-  id: string;
-  name: string;
-  experience: 0 | 1 | 2 | 3 | 5 | 10;
-};
+import type { Skill } from '$lib/types';
 
 export const skills: Skill[] = [
   {

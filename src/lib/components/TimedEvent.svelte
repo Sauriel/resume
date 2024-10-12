@@ -1,5 +1,5 @@
 <article>
-  <div class="timeframe" use:tooltip={length}>
+  <div class="timeframe" use:tooltip={{ text: length, position: 'top' }}>
     <time datetime={event.from.toISOString()}>
       {from}
     </time>

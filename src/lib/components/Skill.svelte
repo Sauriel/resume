@@ -1,10 +1,12 @@
-<label for={`skill-${skill.id}`}>{skill.name}</label>
+<label use:tooltip={{ text: skill.tooltip, position: 'right' }} for={`skill-${skill.id}`}>
+  {skill.name}
+</label>
 <div class="experience">
-  <div title="1 year" class:filled={skill.experience >= 1}></div>
-  <div title="2 years" class:filled={skill.experience >= 2}></div>
-  <div title="3+ years" class:filled={skill.experience >= 3}></div>
-  <div title="5+ years" class:filled={skill.experience >= 5}></div>
-  <div title="10+ years" class:filled={skill.experience >= 10}></div>
+  <div title="1 Jahr" class:filled={skill.experience >= 1}></div>
+  <div title="2 Jahre" class:filled={skill.experience >= 2}></div>
+  <div title="3+ Jahre" class:filled={skill.experience >= 3}></div>
+  <div title="5+ Jahre" class:filled={skill.experience >= 5}></div>
+  <div title="10+ Jahre" class:filled={skill.experience >= 10}></div>
   <meter class="sr-only" id={`skill-${skill.id}`} value={skill.experience} min="0" max="10"></meter>
 </div>
 
@@ -33,7 +35,8 @@
 </style>
 
 <script lang="ts">
-  import type { Skill } from '$lib/data/skills';
+  import { tooltip } from '$lib/actions/tooltip';
+  import type { Skill } from '$lib/types';
 
   export let skill: Skill;
 </script>

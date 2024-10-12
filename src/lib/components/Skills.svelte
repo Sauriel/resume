@@ -1,7 +1,7 @@
 <section id="skills">
   <header>Tech Skills</header>
   <div class="skill-list">
-    {#each skills as skill (skill.id)}
+    {#each sortedSkills as skill (skill.id)}
       <Skill {skill} />
     {/each}
   </div>
@@ -55,7 +55,14 @@
   }
 </style>
 
-<script>
+<script lang="ts">
   import Skill from '$lib/components/Skill.svelte';
   import { skills } from '$lib/data/skills';
+  import { type Skill as SkillType } from '$lib/types';
+
+  $: sortedSkills = skills.toSorted(sortSkills);
+
+  function sortSkills(a: SkillType, b: SkillType): number {
+    return a.name.localeCompare(b.name);
+  }
 </script>

@@ -40,7 +40,7 @@
   }
 </style>
 
-<script>
+<script lang="ts">
   import Skills from '$lib/components/Skills.svelte';
   import Name from '$lib/components/Name.svelte';
   import Hexagon from '$lib/components/Hexagon.svelte';

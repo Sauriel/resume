@@ -52,6 +52,39 @@ p:last-of-type {
   margin-bottom: 0;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
+[popovertarget] {
+  anchor-name: var(--popover-trigger);
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-light--darker);
+  text-underline-offset: 0.25em;
+}
+
+[popover] {
+  --margin: 0 8px;
+  margin: var(--margin);
+  position: absolute;
+  position-anchor: var(--popover-trigger);
+  /* inset-area: right; */
+  /* position-try: --bottom, --left; */
+  /* inset-area: top; */
+}
+
+/* @position-try --bottom {
+  margin: var(--margin);
+  inset-area: bottom;
+}
+
+@position-try --left {
+  margin: var(--margin);
+  inset-area: left;
+} */
+
 .tooltip {
   --sgn: clamp(-1, (var(--j) - var(--i))/0.1, 1);
   --dir: calc(var(--sgn) * (var(--j) - 2 * var(--i)) * 180deg); /* bg direction */
@@ -77,50 +110,23 @@ p:last-of-type {
 .tooltip--bottom {
   --i: 0.5;
   --j: 0;
+  inset-area: bottom;
 }
 
 .tooltip--left {
   --i: 1;
   --j: 0.5;
+  inset-area: left;
 }
 
 .tooltip--top {
   --i: 0.5;
   --j: 1;
+  inset-area: top;
 }
 
 .tooltip--right {
   --i: 0;
   --j: 0.5;
+  inset-area: right;
 }
-
-.no-wrap {
-  white-space: nowrap;
-}
-
-[popovertarget] {
-  anchor-name: var(--popover-trigger);
-  cursor: help;
-}
-
-[popover] {
-  --margin: 0 8px;
-  margin: var(--margin);
-  position: absolute;
-  position-anchor: var(--popover-trigger);
-  /* inset-area: right; */
-  /* position-try: --bottom, --left; */
-  inset-area: top;
-  --i: 0.5;
-  --j: 1;
-}
-
-/* @position-try --bottom {
-  margin: var(--margin);
-  inset-area: bottom;
-}
-
-@position-try --left {
-  margin: var(--margin);
-  inset-area: left;
-} */

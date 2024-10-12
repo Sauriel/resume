@@ -20,6 +20,6 @@
   </p>
 </Block>
 
-<script>
+<script lang="ts">
   import Block from '$lib/components/Block.svelte';
 </script>

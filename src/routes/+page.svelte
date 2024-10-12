@@ -3,6 +3,6 @@
   author="Philip Rosenthal"
 />
 
-<script>
+<script lang="ts">
   import Quote from '$lib/components/Quote.svelte';
 </script>

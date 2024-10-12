@@ -8,7 +8,7 @@ export const jobs: TimedEventEntry[] = [
     from: eventDate(2015, 3),
     to: nowEventDate(),
     description:
-      'Ich habe anfänglich als Fullstack Entwickler im JAVA Umfeld, die Kunden unserer eigenen E-Commerce Shoplösung betreut. Ab 2020 leite ich nun als Frontend Architect die Neuentwicklung unserer auf Vue.js und GraphQL basierenden Shop-Adminoberfläche.',
+      'Nach meinem Studium find ich als Fullstack Entwickler bei der novomind AG and und betreute dort den Jungheinrich Profishop. Auch wenn ich anfangs viel am JAVA Backend arbeitete verlagerte sich meine Arbeit schnell in das Frontend und ich konnte mein Können dort weiter ausbauen, Technologien wie jQuery, Typescript und Angular.js lernte ich in dieser Zeit kennen. 2020 wechselte ich dann in das Core-Team von novomind um dort die Neuentwicklung unserer Shop-Adminoberfläche als Frontend Architect zu leiten. Dabei setzten wir neuste Technologien wie GraphQL und Vue.js (erst Version 2, dann 3) ein.',
   },
   {
     name: 'Mediengestalter',
@@ -16,7 +16,7 @@ export const jobs: TimedEventEntry[] = [
     from: eventDate(2012, 3),
     to: eventDate(2015, 2),
     description:
-      'Ich habe verschiedene Webseiten, Druckprodukte und Logos gestaltet, den Digital- und Offsetdruck unterstützt sowie die Druckerzeugnisse veredelt und weiterverarbeitet.',
+      'Während meines Medieninformatik-Studiums kehrte ich zu meinem alten Ausbildungsbetrieb zurück und übernahm dort wieder meine alten Aufgaben während ich mir neues Können aneignete.',
   },
   {
     name: 'Mediengestalter',
@@ -24,7 +24,7 @@ export const jobs: TimedEventEntry[] = [
     from: eventDate(2009, 7),
     to: eventDate(2012, 2),
     description:
-      'Ich habe verschiedene Webseiten, Druckprodukte und Logos gestaltet, den Digital- und Offsetdruck unterstützt sowie die Druckerzeugnisse veredelt und weiterverarbeitet.',
+      'Nach dem Zusammenschluss der Druckerei Kaufmann + Meinberg mit der A.S. Müller Sofortdruck GmbH fing ich an in diesem Betrieb zu arbeiten und übernahm hauptsächlich die Betreuung unserer Automobilkunden: Audi, VW, Porsche udn Skoda. Ich gestaltete viele Druckprodukte das alltäglichen Bürobedarfs aber auch Flyer und und arbeitete stark in der Weiterverarbeitung mit während ich mich immer mehr mit Webdesign beschäftigte.',
   },
   {
     name: 'Mediengestalter',
@@ -32,7 +32,7 @@ export const jobs: TimedEventEntry[] = [
     from: eventDate(2008, 8),
     to: eventDate(2009, 6),
     description:
-      'Ich habe verschiedene Webseiten, Druckprodukte und Logos gestaltet, den Digital- und Offsetdruck unterstützt sowie die Druckerzeugnisse veredelt und weiterverarbeitet.',
+      'Dies war mein Ausbildungsbetrieb, damals noch bekannt als S/G/P/ (Satz, Grafik, Produktion) Schwanck. Hier habe ich viele verschiedene Druckprodukte für namenhafte Kunden wie z.B. Sharp und die Newell Rubbermaid gestaltet, gedruckt und verarbeitet sowie einige Webseiten designed und umgesetzt.',
   },
   {
     name: 'Mediengestalter',
@@ -40,6 +40,6 @@ export const jobs: TimedEventEntry[] = [
     from: eventDate(2008, 8),
     to: eventDate(2009, 2),
     description:
-      'Ich habe verschiedene Webseiten, Druckprodukte und Logos gestaltet, den Digital- und Offsetdruck unterstützt sowie die Druckerzeugnisse veredelt und weiterverarbeitet.',
+      'Nach meiner Ausbildung zum Mediengestalter habe ich in diesem Partnerbetrieb meines Ausbildungsbetriebes halbtags gearbeitet und dort verschiedene Druckprodukte, wie z.B. Briefbögen, Flyer aber auch Webseiten gestaltet.',
   },
 ];

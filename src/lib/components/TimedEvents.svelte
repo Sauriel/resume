@@ -9,6 +9,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    overflow-y: auto;
+    max-height: var(--block-content-height);
   }
 </style>
 

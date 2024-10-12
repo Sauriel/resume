@@ -25,6 +25,11 @@
 
 <style>
   #app {
+    --top-whitespace: 10rem;
+    --menu-height: 2rem;
+    --app-grid-row-gap: 1rem;
+    --bottom-whitespace: 8rem;
+
     display: grid;
     grid-template-areas:
       '. . .'
@@ -32,9 +37,9 @@
       'sidebar content .'
       'sidebar . .';
     grid-template-columns: 20rem 1fr 8rem;
-    grid-template-rows: 10rem 2rem 1fr 8rem;
-    column-gap: 4cap;
-    row-gap: 1rem;
+    grid-template-rows: var(--top-whitespace) var(--menu-height) 1fr var(--bottom-whitespace);
+    column-gap: 3rem;
+    row-gap: var(--app-grid-row-gap);
     height: 100dvh;
   }
 
@@ -58,10 +63,19 @@
   }
 
   main {
+    --padding: 1rem;
+
+    --main-content-height: calc(
+      100dvh -
+        (
+          var(--top-whitespace) + var(--menu-height) + var(--bottom-whitespace) +
+            (3 * var(--app-grid-row-gap)) + (2 * var(--padding))
+        )
+    );
     grid-area: content;
     background-color: var(--color-dark);
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: var(--padding);
     overflow: hidden;
   }
 

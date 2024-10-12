@@ -17,12 +17,14 @@
 
 <style>
   section {
+    --block-header-height: 3rem;
+    --block-grid-gap: 1rem;
     display: grid;
     grid-template-areas:
       'hexline header'
       'hexline content';
-    grid-template-columns: 2rem 1fr;
-    gap: 1rem;
+    grid-template-columns: var(--block-header-height) 1fr;
+    gap: var(--block-grid-gap);
   }
 
   header {
@@ -65,7 +67,10 @@
 
   .content {
     grid-area: content;
-    padding-bottom: 1rem;
+    padding-bottom: var(--block-grid-gap);
+    --block-content-height: calc(
+      var(--main-content-height) - (var(--block-header-height) + (2 * var(--block-grid-gap)))
+    );
   }
 </style>
 

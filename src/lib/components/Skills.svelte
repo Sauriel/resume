@@ -26,7 +26,6 @@
     row-gap: 0.5em;
     max-height: 360px;
     overflow-x: auto;
-    padding-right: 0.5em;
   }
 
   header {
@@ -42,7 +41,7 @@
     width: var(--exp-width);
     margin-top: 0.5em;
     margin-left: auto;
-    margin-right: calc(0.5em + var(--scrollbar-width));
+    margin-right: calc(0.5em + (2 * var(--scrollbar-width)));
     display: flex;
     justify-content: space-between;
   }

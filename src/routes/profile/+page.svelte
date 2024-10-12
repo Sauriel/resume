@@ -19,7 +19,11 @@
     Lösungen für komplexe Probleme zu finden.
   </p>
 </Block>
+<Block header="Kontakt">
+  <Contact />
+</Block>
 
 <script lang="ts">
   import Block from '$lib/components/Block.svelte';
+  import Contact from '$lib/components/Contact.svelte';
 </script>

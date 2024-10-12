@@ -8,7 +8,6 @@
       <NavItem path="/profile">Kurzprofil</NavItem>
       <NavItem path="/jobs">Berufserfahrungen</NavItem>
       <NavItem path="/education">Ausbildung</NavItem>
-      <NavItem path="/contact">Präsenz</NavItem>
     </ul>
     <a href="https://github.com/Sauriel/resume" target="_blank" id="source-link">
       <Icon icon="fa6-brands:github" />
@@ -16,7 +15,7 @@
   </nav>
   <main>
     {#key data.url}
-      <div in:fly={{ x: -200, duration: 300, delay: 300 }} out:fly={{ x: 200, duration: 300 }}>
+      <div in:fly={{ y: -200, duration: 300, delay: 300 }} out:fly={{ y: 200, duration: 300 }}>
         <slot />
       </div>
     {/key}
@@ -81,6 +80,9 @@
 
   main > div {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   #source-link {

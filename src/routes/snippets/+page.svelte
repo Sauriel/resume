@@ -1,26 +1,18 @@
 <section>
-  <nav>snippets</nav>
+  <nav>
+    {#each snippets as snippet (snippet.label)}
+      <button on:click={() => loadSnippet(snippet)}>{snippet.label}</button>
+    {/each}
+  </nav>
   <div id="editor">
     <Accordion icon="ion:logo-html5" title="HTML">
-      <MonacoEditor
-        value={snippet['index.html'].file.contents}
-        lang="html"
-        on:change={onHtmlChange}
-      />
+      <MonacoEditor value={$containerStore.html} lang="html" on:change={onHtmlChange} />
     </Accordion>
     <Accordion icon="ion:logo-css3" title="CSS">
-      <MonacoEditor
-        value={snippet['styles.css'].file.contents}
-        lang="css"
-        on:change={onCssChange}
-      />
+      <MonacoEditor value={$containerStore.css} lang="css" on:change={onCssChange} />
     </Accordion>
     <Accordion icon="ion:logo-javascript" title="JS">
-      <MonacoEditor
-        value={snippet['script.js'].file.contents}
-        lang="javascript"
-        on:change={onJsChange}
-      />
+      <MonacoEditor value={$containerStore.script} lang="javascript" on:change={onJsChange} />
     </Accordion>
   </div>
   <header>
@@ -103,20 +95,20 @@
 <script lang="ts">
   import { WebContainer } from '@webcontainer/api';
   import type { PageData } from './$types';
-  import containerStore, { type Snippet } from '$lib/stores/containerStore';
-  import { onMount } from 'svelte';
+  import containerStore from '$lib/stores/containerStore';
+  import { onDestroy, onMount } from 'svelte';
   import MonacoEditor from '$lib/components/MonacoEditor.svelte';
   import Accordion from '$lib/components/Accordion.svelte';
   import Icon from '@iconify/svelte';
+  import { containerFiles, snippets } from '$lib/stores/container';
+  import type { Snippet } from '$lib/types';
+  import { get } from 'svelte/store';
 
   export let data: PageData;
 
   let iframe: HTMLIFrameElement;
 
   let webcontainerInstance: WebContainer;
-
-  let snippetName: Snippet = 'empty';
-  $: snippet = containerStore.get(snippetName);
 
   let htmlUpdate: string | null = null;
   let cssUpdate: string | null = null;
@@ -126,11 +118,21 @@
 
   onMount(initContainer);
 
+  const unsubscribe = containerStore.subscribe(async (snippet) => {
+    if (webcontainerInstance) {
+      await webcontainerInstance.fs.writeFile('index.html', snippet.html);
+      await webcontainerInstance.fs.writeFile('styles.css', snippet.css);
+      await webcontainerInstance.fs.writeFile('script.js', snippet.script);
+    }
+  });
+
   async function initContainer() {
     console.log('booting container ...');
     webcontainerInstance = await WebContainer.boot();
     console.log('mounting files ...');
-    await webcontainerInstance.mount(snippet);
+    await webcontainerInstance.mount(containerFiles);
+
+    // await loadSnippet(get(containerStore));
 
     const exitCode = await installDependencies();
     if (exitCode !== 0) {
@@ -138,6 +140,13 @@
     }
 
     startDevServer();
+  }
+
+  async function loadSnippet(snippet: Snippet) {
+    // await webcontainerInstance.fs.writeFile('index.html', snippet.html);
+    // await webcontainerInstance.fs.writeFile('styles.css', snippet.css);
+    // await webcontainerInstance.fs.writeFile('script.js', snippet.script);
+    containerStore.set(snippet);
   }
 
   async function installDependencies(): Promise<number> {
@@ -193,4 +202,6 @@
       jsUpdate = null;
     }
   }
+
+  onDestroy(unsubscribe);
 </script>

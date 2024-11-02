@@ -24,6 +24,12 @@
 
   const dispatch = createEventDispatcher<{ change: string }>();
 
+  $: {
+    if (monacoEditor) {
+      monacoEditor.setValue(value);
+    }
+  }
+
   onMount(async () => {
     self.MonacoEnvironment = {
       getWorker: function (_: any, label: string) {

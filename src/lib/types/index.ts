@@ -17,3 +17,10 @@ export type TooltipPayload = {
   text?: string;
   position: 'top' | 'left' | 'bottom' | 'right';
 };
+
+export type Snippet = {
+  label: string;
+  html: string;
+  css: string;
+  script: string;
+};

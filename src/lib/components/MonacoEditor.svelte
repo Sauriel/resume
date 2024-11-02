@@ -9,7 +9,7 @@
 
 <script lang="ts">
   import * as monaco from 'monaco-editor';
-  import { onMount } from 'svelte';
+  import { createEventDispatcher, onMount } from 'svelte';
   import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
   import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
   import cssWorker from 'monaco-editor/esm/vs/language/css/css.worker?worker';
@@ -21,6 +21,8 @@
 
   let editor: HTMLDivElement;
   let monacoEditor: monaco.editor.IStandaloneCodeEditor;
+
+  const dispatch = createEventDispatcher<{ change: string }>();
 
   onMount(async () => {
     self.MonacoEnvironment = {
@@ -49,6 +51,10 @@
       minimap: {
         enabled: false,
       },
+    });
+
+    monacoEditor.onDidChangeModelContent(() => {
+      dispatch('change', monacoEditor.getValue());
     });
   });
 </script>

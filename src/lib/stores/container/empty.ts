@@ -8,10 +8,12 @@ const empty: FileSystemTree = {
             "name": "example-app",
             "type": "module",
             "dependencies": {
+              "nodemon": "latest",
               "http-server": "latest"
             },
             "scripts": {
-              "start": "http-server"
+              "serve": "http-server",
+              "serve-watch": "nodemon --watch index.html --watch script.js --watch styles.css --exec 'npm run serve'"
             }
           }`,
     },

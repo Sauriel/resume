@@ -70,19 +70,19 @@ p:last-of-type {
   margin: var(--margin);
   position: absolute;
   position-anchor: var(--popover-trigger);
-  /* inset-area: right; */
+  /* position-area: right; */
   /* position-try: --bottom, --left; */
-  /* inset-area: top; */
+  /* position-area: top; */
 }
 
 /* @position-try --bottom {
   margin: var(--margin);
-  inset-area: bottom;
+  position-area: bottom;
 }
 
 @position-try --left {
   margin: var(--margin);
-  inset-area: left;
+  position-area: left;
 } */
 
 .tooltip {
@@ -110,23 +110,23 @@ p:last-of-type {
 .tooltip--bottom {
   --i: 0.5;
   --j: 0;
-  inset-area: bottom;
+  position-area: bottom;
 }
 
 .tooltip--left {
   --i: 1;
   --j: 0.5;
-  inset-area: left;
+  position-area: left;
 }
 
 .tooltip--top {
   --i: 0.5;
   --j: 1;
-  inset-area: top;
+  position-area: top;
 }
 
 .tooltip--right {
   --i: 0;
   --j: 0.5;
-  inset-area: right;
+  position-area: right;
 }

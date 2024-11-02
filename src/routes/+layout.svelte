@@ -2,12 +2,15 @@
   <Sidebar />
   <nav>
     <ul>
-      <NavItem path="/">
-        <Icon icon="fa6-solid:house" />
-      </NavItem>
-      <NavItem path="/profile">Kurzprofil</NavItem>
-      <NavItem path="/jobs">Berufserfahrungen</NavItem>
-      <NavItem path="/education">Ausbildung</NavItem>
+      {#each pageLinks as page (page.path)}
+        <NavItem path={page.path}>
+          {#if page.icon}
+            <Icon icon={page.icon} />
+          {:else if page.label}
+            {page.label}
+          {/if}
+        </NavItem>
+      {/each}
     </ul>
     <a href="https://github.com/Sauriel/resume" target="_blank" id="source-link">
       <Icon icon="fa6-brands:github" />
@@ -83,6 +86,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    overflow-y: auto;
   }
 
   #source-link {
@@ -112,5 +116,38 @@
   import { fly } from 'svelte/transition';
   import type { PageData } from './$types';
 
+  type NavEntry = { path: string; label?: string; icon?: string };
+
   export let data: PageData;
+
+  const pageLinks: NavEntry[] = [
+    {
+      path: '/',
+      icon: 'fa6-solid:house',
+    },
+    {
+      path: '/profile',
+      label: 'Kurzprofil',
+    },
+    {
+      path: '/blog',
+      label: 'Blog',
+    },
+    {
+      path: '/projects',
+      label: 'Projekte',
+    },
+    {
+      path: '/snippets',
+      label: 'Code Snippets',
+    },
+    {
+      path: '/jobs',
+      label: 'Berufserfahrungen',
+    },
+    {
+      path: '/education',
+      label: 'Ausbildung',
+    },
+  ];
 </script>

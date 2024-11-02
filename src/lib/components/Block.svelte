@@ -77,5 +77,5 @@
 <script lang="ts">
   import Hexagon from '$lib/components/Hexagon.svelte';
 
-  export let header: String;
+  export let header: string;
 </script>

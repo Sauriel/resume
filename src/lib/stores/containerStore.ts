@@ -1,11 +1,13 @@
 import type { FileSystemTree } from '@webcontainer/api';
 import { get, writable } from 'svelte/store';
 import test from './container/test';
+import empty from './container/empty';
 
-export type Snippet = 'test';
+export type Snippet = 'test' | 'empty';
 
 const container = writable<Record<Snippet, FileSystemTree>>({
   test: test,
+  empty: empty,
 });
 
 const containerStore = {

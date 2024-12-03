@@ -129,10 +129,10 @@
       path: '/profile',
       label: 'Kurzprofil',
     },
-    {
-      path: '/blog',
-      label: 'Blog',
-    },
+    // {
+    //   path: '/blog',
+    //   label: 'Blog',
+    // },
     {
       path: '/projects',
       label: 'Projekte',

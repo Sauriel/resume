@@ -14,7 +14,7 @@ export const education: TimedEventEntry[] = [
     place: 'G5 Berufsschule',
     from: eventDate(2005, 8),
     to: eventDate(2008, 7),
-    description: 'Fachrichtugn Mediendesign. Ausbildungsbetrieb: Medienzirkus Gudrun Schwanck.',
+    description: 'Fachrichtung Mediendesign. Ausbildungsbetrieb: Medienzirkus Gudrun Schwanck.',
   },
   {
     name: 'Fachhochschulreife Gestaltung',

@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Block from '../components/Block.astro';
+import TimedEvents from '../components/TimedEvents.astro';
+import { jobs } from '../data/jobs';
+
+---
+
+<Layout>
+	<Block header="Berufserfahrungen">
+		<TimedEvents events={jobs} />
+	</Block>
+</Layout>

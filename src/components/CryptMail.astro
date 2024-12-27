@@ -1,0 +1,34 @@
+---
+interface Props {
+  name: string;
+  domain: string;
+  tld: string;
+  cssClass: string;
+}
+
+const { name, domain, tld, cssClass } = Astro.props;
+---
+
+<a
+  href="#"
+  class={`cryptmail ${cssClass}`}
+  data-name={name}
+  data-domain={domain}
+  data-tld={tld}
+>
+  <slot />
+</a>
+
+<script>
+  document.querySelector('.cryptmail')?.addEventListener('click', (event) => {
+    const data = (event.target as HTMLAnchorElement).dataset;
+    window.location.href = `mailto:${data.name}@${data.domain}.${data.tld}`;
+  })
+
+</script>
+
+<style>
+  .cryptmail::after {
+    content: attr(data-name) '@' attr(data-domain) '.' attr(data-tld);
+  }
+</style>

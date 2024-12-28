@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     'nuxt-rebundle',
     'nuxt-time',
     '@nuxt/icon',
+    '@pinia/nuxt',
   ],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -21,6 +22,16 @@ export default defineNuxtConfig({
     pageTransition: {
       name: 'page',
       mode: 'out-in',
+    },
+  },
+  nitro: {
+    routeRules: {
+      '/snippets': {
+        headers: {
+          'Cross-Origin-Embedder-Policy': 'require-corp',
+          'Cross-Origin-Opener-Policy': 'same-origin',
+        },
+      },
     },
   },
 });

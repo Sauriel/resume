@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import '@fontsource-variable/open-sans';
-import '@/styles/base.css';
+import '~/styles/base.css';
 import type { NavEntry } from '~/types';
 
 const pageLinks: NavEntry[] = [
@@ -59,7 +59,7 @@ const pageLinks: NavEntry[] = [
 ];
 </script>
 
-<style>
+<style scoped>
 #app {
   --top-whitespace: 10rem;
   --menu-height: 2rem;
@@ -112,6 +112,9 @@ main {
   border-radius: 0.5rem;
   padding: var(--padding);
   overflow: hidden;
+}
+
+main > div {
   height: 100%;
   display: flex;
   flex-direction: column;

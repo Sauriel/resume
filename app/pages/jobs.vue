@@ -1,20 +1,9 @@
 <template>
-  <div>jobs</div>
+  <UiBlock header="Berufserfahrungen">
+    <UiTimedEvents :events="jobs" />
+  </UiBlock>
 </template>
 
 <script setup lang="ts">
-// type Props = {
-//   value: string;
-// }
-
-// type Emits = {
-//   (e: 'update', payload: string): void;
-// }
-
-// const props = defineProps<Props>();
-// const emit = defineEmits<Emits>();
+import { jobs } from '~/data/jobs';
 </script>
-
-<style scoped>
-/* ToDo: Add style content */
-</style>

@@ -1,20 +1,6 @@
 <template>
-  <div>index</div>
+  <UiQuote
+    value="Wer aufhört, besser zu werden, hat aufgehört, gut zu sein."
+    author="Philip Rosenthal"
+  />
 </template>
-
-<script setup lang="ts">
-// type Props = {
-//   value: string;
-// }
-
-// type Emits = {
-//   (e: 'update', payload: string): void;
-// }
-
-// const props = defineProps<Props>();
-// const emit = defineEmits<Emits>();
-</script>
-
-<style scoped>
-/* ToDo: Add style content */
-</style>

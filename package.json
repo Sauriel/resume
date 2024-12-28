@@ -19,6 +19,7 @@
     "@iconify/svelte": "^4.1.0",
     "@webcontainer/api": "^1.5.1-internal.5",
     "astro-icon": "^1.1.5",
+    "astro-loader-obsidian": "^0.0.7",
     "monaco-editor": "^0.52.0",
     "svelte": "^5.16.0"
   }

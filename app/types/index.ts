@@ -1,9 +1,14 @@
-import type { RouteNamedMap } from 'vue-router/auto-routes';
+import type { RouteLocationAsRelativeI18n } from 'vue-router';
+import type { RouteNamedMap, RouteNamedMapI18n } from 'vue-router/auto-routes';
 
+export type ValidRouteName =
+  | keyof RouteNamedMapI18n
+  | (Omit<RouteLocationAsRelativeI18n, 'path'> & { path?: string | undefined });
 export type ValidPath = RouteNamedMap[keyof RouteNamedMap]['path'];
 
 export type NavEntry = {
-  path: ValidPath;
+  page: ValidRouteName;
+  path?: ValidPath;
   label?: string;
   icon?: string;
 };

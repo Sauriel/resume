@@ -1,18 +1,16 @@
 <template>
-  <h1>Comming soon...</h1>
+  <div>
+    <nav>
+      <ContentNavigation v-slot="{ navigation }">
+        <BlogNavigation :items="navigation" content="blog" />
+      </ContentNavigation>
+    </nav>
+    <NuxtPage />
+  </div>
 </template>
 
 <script setup lang="ts">
-// type Props = {
-//   value: string;
-// }
-
-// type Emits = {
-//   (e: 'update', payload: string): void;
-// }
-
-// const props = defineProps<Props>();
-// const emit = defineEmits<Emits>();
+defineI18nRoute(false);
 </script>
 
 <style scoped>

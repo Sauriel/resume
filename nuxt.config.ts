@@ -1,3 +1,5 @@
+import { resolve } from 'node:path';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -9,6 +11,8 @@ export default defineNuxtConfig({
     'nuxt-time',
     '@nuxt/icon',
     '@pinia/nuxt',
+    '@nuxt/content',
+    '@nuxtjs/i18n',
   ],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -33,5 +37,27 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  content: {
+    sources: {
+      blog: {
+        driver: 'fs',
+        prefix: '/blog',
+        base: resolve(
+          __dirname,
+          '../../../../mnt/c/Users/s_dru/Dropbox/Aus Arbeit/Obsidian Vault/Blog/posts'
+        ),
+      },
+    },
+    navigation: {
+      fields: ['date', 'language', 'description'],
+    },
+  },
+  i18n: {
+    locales: [
+      { code: 'de', language: 'de-DE', name: 'deutsch' },
+      { code: 'en', language: 'en-US', name: 'english' },
+    ],
+    defaultLocale: 'de',
   },
 });

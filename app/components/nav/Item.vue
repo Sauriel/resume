@@ -1,23 +1,23 @@
 <template>
   <li>
-    <NuxtLink :to="path" :class="{ active: isActive }">
+    <NuxtLink :to="to">
       <slot />
     </NuxtLink>
   </li>
 </template>
 
 <script setup lang="ts">
-import type { ValidPath } from '~/types';
+import type { NavEntry } from '~/types';
 
 type Props = {
-  path: ValidPath;
+  item: NavEntry;
 };
 
-const { path } = defineProps<Props>();
+const props = defineProps<Props>();
 
-const route = useRoute();
+const localePath = useLocalePath();
 
-const isActive = computed<boolean>(() => path === route.path);
+const to = computed(() => props.item.path ?? localePath(props.item.page));
 </script>
 
 <style scoped>
@@ -42,7 +42,7 @@ li > a:focus {
   color: var(--color-primary--lighter);
 }
 
-li > a.active {
+li > a.router-link-active {
   color: var(--color-primary);
 }
 </style>

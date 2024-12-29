@@ -3,14 +3,17 @@
     <Sidebar />
     <nav>
       <ul>
-        <NavItem v-for="page of pageLinks" :key="page.path" :path="page.path">
+        <NavItem v-for="page of pageLinks" :key="page.path" :item="page">
           <Icon v-if="page.icon" :name="page.icon" />
           <span v-else-if="page.label">{{ page.label }}</span>
         </NavItem>
       </ul>
-      <a id="source-link" href="https://github.com/Sauriel/resume" target="_blank">
-        <Icon name="fa6-brands:github" />
-      </a>
+      <div class="right-nav">
+        <UiLanguageSwitch />
+        <a id="source-link" href="https://github.com/Sauriel/resume" target="_blank">
+          <Icon name="fa6-brands:github" />
+        </a>
+      </div>
     </nav>
     <main>
       <slot />
@@ -25,35 +28,36 @@ import type { NavEntry } from '~/types';
 
 const pageLinks: NavEntry[] = [
   {
-    path: '/',
+    page: 'index',
     icon: 'fa6-solid:house',
   },
   {
-    path: '/profile',
+    page: 'profile',
     label: 'Kurzprofil',
   },
   {
+    page: 'blog',
     path: '/blog',
     label: 'Blog',
   },
   {
-    path: '/projects',
+    page: 'projects',
     label: 'Projekte',
   },
   {
-    path: '/snippets',
+    page: 'snippets',
     label: 'Code Snippets',
   },
   {
-    path: '/jobs',
+    page: 'jobs',
     label: 'Berufserfahrungen',
   },
   {
-    path: '/education',
+    page: 'education',
     label: 'Ausbildung',
   },
   {
-    path: '/conferences',
+    page: 'conferences',
     label: 'Konferenzen',
   },
 ];
@@ -96,6 +100,14 @@ nav > ul {
   display: flex;
   gap: 1em;
   height: 100%;
+}
+
+.right-nav {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1em;
 }
 
 main {

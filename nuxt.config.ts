@@ -1,4 +1,5 @@
 import { resolve } from 'node:path';
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -22,11 +23,22 @@ export default defineNuxtConfig({
   experimental: {
     typedPages: true,
   },
+  css: ['./app/styles/base.css'],
   app: {
+    head: {
+      title: 'Sauriel.net',
+    },
     pageTransition: {
       name: 'page',
       mode: 'out-in',
     },
+  },
+  vite: {
+    plugins: [
+      VueI18nPlugin.vite({
+        include: [resolve(__dirname, './app/locales/**')],
+      }),
+    ],
   },
   nitro: {
     routeRules: {
@@ -50,7 +62,10 @@ export default defineNuxtConfig({
       },
     },
     navigation: {
-      fields: ['date', 'language', 'description'],
+      fields: ['draft', 'date', 'language', 'description'],
+    },
+    markdown: {
+      anchorLinks: false,
     },
   },
   i18n: {
@@ -59,5 +74,6 @@ export default defineNuxtConfig({
       { code: 'en', language: 'en-US', name: 'english' },
     ],
     defaultLocale: 'de',
+    vueI18n: './i18n.config.ts',
   },
 });

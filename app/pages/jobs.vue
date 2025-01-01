@@ -1,9 +1,9 @@
 <template>
-  <UiBlock header="Berufserfahrungen">
+  <UiBlock :header="$t('jobs.header')">
     <UiTimedEvents :events="jobs" />
   </UiBlock>
 </template>
 
 <script setup lang="ts">
-import { jobs } from '~/data/jobs';
+const { jobs } = useJobs();
 </script>

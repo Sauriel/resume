@@ -1,10 +1,14 @@
 {
   "folders": [
     {
-      "path": ".",
-    },
+      "path": "."
+    }
   ],
   "settings": {
     "npm.packageManager": "bun",
-  },
+    "i18n-ally.localesPaths": ["app/locales"],
+    "i18n-ally.displayLanguage": "de",
+    "i18n-ally.pathMatcher": "{namespace}/{locale}.json",
+    "i18n-ally.keystyle": "nested"
+  }
 }

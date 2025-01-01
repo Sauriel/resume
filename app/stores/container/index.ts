@@ -1,27 +1,5 @@
 import type { FileSystemTree } from '@webcontainer/api';
-import type { Snippet } from '~/types';
-import hexGridSnippet from './hexGrid';
-
-const skeletonSnippet: Snippet = {
-  label: 'Empty',
-  html: `<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <title>Snippet</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
-</html>`,
-  css: `h1 {
-  color: white;
-}`,
-  script: 'console.log("Hello World!");',
-};
+import helloWorldSnippet from './helloWorld';
 
 const containerFiles: FileSystemTree = {
   'package.json': {
@@ -43,21 +21,19 @@ const containerFiles: FileSystemTree = {
   },
   'index.html': {
     file: {
-      contents: skeletonSnippet.html,
+      contents: helloWorldSnippet.html,
     },
   },
   'styles.css': {
     file: {
-      contents: skeletonSnippet.css,
+      contents: helloWorldSnippet.css,
     },
   },
   'script.js': {
     file: {
-      contents: skeletonSnippet.script,
+      contents: helloWorldSnippet.script,
     },
   },
 };
 
-const snippets: Snippet[] = [skeletonSnippet, hexGridSnippet];
-
-export { containerFiles, skeletonSnippet, snippets };
+export { containerFiles };

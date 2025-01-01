@@ -3,11 +3,23 @@
     {{ skill.name }}
   </label>
   <div class="experience">
-    <div title="1 Jahr" :class="{ filled: skill.experience >= 1 }" />
-    <div title="2 Jahre" :class="{ filled: skill.experience >= 2 }" />
-    <div title="3+ Jahre" :class="{ filled: skill.experience >= 3 }" />
-    <div title="5+ Jahre" :class="{ filled: skill.experience >= 5 }" />
-    <div title="10+ Jahre" :class="{ filled: skill.experience >= 10 }" />
+    <div :title="$t('sidebar.skills.footer.one-year')" :class="{ filled: skill.experience >= 1 }" />
+    <div
+      :title="$t('sidebar.skills.footer.two-years')"
+      :class="{ filled: skill.experience >= 2 }"
+    />
+    <div
+      :title="$t('sidebar.skills.footer.three-years')"
+      :class="{ filled: skill.experience >= 3 }"
+    />
+    <div
+      :title="$t('sidebar.skills.footer.five-years')"
+      :class="{ filled: skill.experience >= 5 }"
+    />
+    <div
+      :title="$t('sidebar.skills.footer.ten-years')"
+      :class="{ filled: skill.experience >= 10 }"
+    />
     <meter :id="`skill-${skill.id}`" class="sr-only" :value="skill.experience" min="0" max="10" />
   </div>
 </template>

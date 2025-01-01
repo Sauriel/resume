@@ -1,7 +1,7 @@
 <template>
   <article>
     <div v-tooltip="{ text: length, position: 'top' }" class="timeframe">
-      <time datetime="{event.from.toISOString()}">
+      <time :datetime="event.from.toISOString()">
         {{ from }}
       </time>
       <span>&nbsp;–&nbsp;</span>
@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import type { TimedEventEntry } from '~/types/types';
+import type { TimedEventEntry } from '~/types';
 
 type Props = {
   event: TimedEventEntry;
@@ -29,11 +29,13 @@ type Props = {
 
 const props = defineProps<Props>();
 
+const { locale, t } = useI18n();
+
 const from = computed<string>(() =>
-  props.event.from.toLocaleString('default', { month: 'long', year: 'numeric' })
+  props.event.from.toLocaleString(locale.value, { month: 'long', year: 'numeric' })
 );
 const to = computed<string>(() =>
-  props.event.to.toLocaleString('default', { month: 'long', year: 'numeric' })
+  props.event.to.toLocaleString(locale.value, { month: 'long', year: 'numeric' })
 );
 const length = computed<string>(() => calculateLength(props.event.from, props.event.to));
 
@@ -46,17 +48,16 @@ function calculateLength(from: Date, to: Date): string {
     monthDiff += 12;
   }
 
-  const month = monthDiff > 1 ? 'Monate' : 'Monat';
-  const year = yearDiff > 1 ? 'Jahre' : 'Jahr';
-
   const timeframe: string[] = [];
   if (yearDiff > 0) {
-    timeframe.push(`${yearDiff} ${year}`);
+    // @ts-expect-error Seems like a typing problem, but works
+    timeframe.push(t('ui.year', yearDiff, { count: yearDiff }));
   }
   if (monthDiff > 0) {
-    timeframe.push(`${monthDiff} ${month}`);
+    // @ts-expect-error Seems like a typing problem, but works
+    timeframe.push(t('ui.month', monthDiff, { count: monthDiff }));
   }
-  return timeframe.join(' und ');
+  return timeframe.join(` ${t('ui.and')} `);
 }
 </script>
 

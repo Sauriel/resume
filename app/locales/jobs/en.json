@@ -1,0 +1,25 @@
+{
+  "jobs": {
+    "header": "Work experience",
+    "job1": {
+      "title": "Media designer",
+      "description": "After my training as a media designer, I worked part-time in this partner company of my training company and designed various print products there, such as letterheads, flyers and websites."
+    },
+    "job2": {
+      "title": "Media designer",
+      "description": "This was my training company, then still known as S/G/P/ (typesetting, graphics, production) Schwanck. Here I designed, printed and processed many different print products for well-known customers such as Sharp and Newell Rubbermaid, as well as designing and implementing several websites."
+    },
+    "job3": {
+      "title": "Media designer",
+      "description": "After the merger of the Kaufmann + Meinberg printing company with A.S. Müller Sofortdruck GmbH, I started working in this company and mainly took over the support of our automotive customers: Audi, VW, Porsche and Skoda. I designed many print products for everyday office needs but also flyers and worked a lot in finishing while I became more and more involved in web design."
+    },
+    "job4": {
+      "title": "Media designer",
+      "description": "During my media informatics studies, I returned to my old training company and took on my old tasks again while acquiring new skills."
+    },
+    "job5": {
+      "title": "Software developer",
+      "description": "After my studies, I joined novomind AG as a full-stack developer and was responsible for the Jungheinrich professional store. Even though I initially worked a lot on the JAVA backend, my work quickly shifted to the frontend and I was able to further expand my skills there, getting to know technologies such as jQuery, Typescript and Angular.js during this time. In 2020, I then moved to the novomind core team to lead the new development of our store admin interface as a frontend architect. We used the latest technologies such as GraphQL and Vue.js (first version 2, then 3)."
+    }
+  }
+}

@@ -1,28 +1,29 @@
 <template>
   <section id="skills">
-    <header>Tech Skills</header>
+    <header>{{ $t('sidebar.skills.header') }}</header>
     <div class="skill-list">
       <SidebarSkill v-for="skill of sortedSkills" :key="skill.id" :skill="skill" />
     </div>
     <footer>
-      <span>1 Jahr</span>
-      <span>2 Jahre</span>
-      <span>3+ Jahre</span>
-      <span>5+ Jahre</span>
-      <span>10+ Jahre</span>
+      <span>{{ $t('sidebar.skills.footer.one-year') }}</span>
+      <span>{{ $t('sidebar.skills.footer.two-years') }}</span>
+      <span>{{ $t('sidebar.skills.footer.three-years') }}</span>
+      <span>{{ $t('sidebar.skills.footer.five-years') }}</span>
+      <span>{{ $t('sidebar.skills.footer.ten-years') }}</span>
     </footer>
   </section>
 </template>
 
 <script setup lang="ts">
-import { skills } from '~/data/skills';
 import type { Skill } from '~/types';
+
+const { skills } = useSkills();
 
 function sortSkills(a: Skill, b: Skill): number {
   return a.name.localeCompare(b.name);
 }
 
-const sortedSkills = computed<Skill[]>(() => skills.toSorted(sortSkills));
+const sortedSkills = computed<Skill[]>(() => skills.value.toSorted(sortSkills));
 </script>
 
 <style scoped>

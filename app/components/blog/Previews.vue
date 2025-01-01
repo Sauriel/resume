@@ -1,7 +1,7 @@
 <template>
-  <ul>
-    <BlogNavigationItem v-for="post of posts" :key="post._path" :item="post" />
-  </ul>
+  <div id="blog-postings">
+    <BlogPreviewItem v-for="post of posts" :key="post._path" :item="post" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -27,12 +27,11 @@ const posts = computed<NavItem[]>(
 </script>
 
 <style scoped>
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+#blog-postings {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 1rem;
+  height: var(--block-content-height);
+  overflow-y: auto;
 }
 </style>

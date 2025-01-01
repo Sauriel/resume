@@ -3,12 +3,15 @@
     <NuxtLink
       v-for="availableLocale in availableLocales"
       :key="availableLocale.code"
-      v-tooltip="{ text: `Switch to ${availableLocale.name}`, position: 'top' }"
+      v-tooltip="{
+        text: $t('ui.language-switcher', { locale: availableLocale.name }),
+        position: 'top',
+      }"
       :to="switchLocalePath(availableLocale.code)"
-      @click.prevent.stop="(event) => onLanguageSwitcherClick(event, availableLocale)"
+      @click.prevent.stop="() => onLanguageSwitcherClick(availableLocale)"
     >
       <Icon name="ion:language" />
-      {{ availableLocale.code }}
+      {{ locale }}
     </NuxtLink>
   </div>
 </template>
@@ -19,11 +22,9 @@ import type { LocaleObject } from '@nuxtjs/i18n';
 const { locale, locales, setLocale } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
 
-const availableLocales = computed(() => {
-  return locales.value.filter((i) => i.code !== locale.value);
-});
+const availableLocales = computed(() => locales.value.filter((i) => i.code !== locale.value));
 
-function onLanguageSwitcherClick(event: Event, locale: LocaleObject<'de' | 'en'>) {
+function onLanguageSwitcherClick(locale: LocaleObject<'de' | 'en'>) {
   if (!switchLocalePath(locale.code)) {
     setLocale(locale.code);
   }

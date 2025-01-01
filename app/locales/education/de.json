@@ -1,0 +1,17 @@
+{
+  "education": {
+    "header": "Ausbildung",
+    "ed1": {
+      "title": "Fachhochschulreife Gestaltung",
+      "description": "Begleitendes einjähriges Praktikum im Medienzirkus Gudrun Schwanck."
+    },
+    "ed2": {
+      "title": "Mediengestalter Digital & Print",
+      "description": "Fachrichtung Mediendesign. Ausbildungsbetrieb: Medienzirkus Gudrun Schwanck."
+    },
+    "ed3": {
+      "title": "B.SC Media Systems",
+      "description": "Studium der Medieninformatik mit Fokus auf neue Medien."
+    }
+  }
+}

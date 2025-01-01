@@ -1,9 +1,9 @@
 <template>
-  <UiBlock header="Ausbildung">
+  <UiBlock :header="$t('education.header')">
     <UiTimedEvents :events="education" />
   </UiBlock>
 </template>
 
 <script setup lang="ts">
-import { education } from '~/data/education';
+const { education } = useEducation();
 </script>

@@ -1,7 +1,8 @@
 <template>
   <li>
-    <NuxtLink :to="item._path">{{ item.title }}</NuxtLink>
-    <small>{{ item.date }}</small>
+    <NuxtLink :to="item._path">
+      {{ item.title }}
+    </NuxtLink>
   </li>
 </template>
 
@@ -16,23 +17,20 @@ defineProps<Props>();
 </script>
 
 <style scoped>
-a,
-a:active,
-a:visited {
-  color: white;
+a {
+  color: var(--color-light);
+  text-decoration: none;
 }
 
-a:hover,
-a:active:hover,
-a:visited:hover {
-  color: gray;
+a:hover {
+  color: var(--color-light--darker);
 }
 
 a.router-link-exact-active {
-  color: red;
+  color: var(--color-primary);
 }
 
 a.router-link-exact-active:hover {
-  color: darkred;
+  color: var(--color-primary--darker);
 }
 </style>

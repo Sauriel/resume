@@ -8,6 +8,7 @@
 </template>
 
 <script setup lang="ts">
+const FALLBACK_NUM_OF_ROWS = 4;
 type Props = {
   value: string;
   author: string;
@@ -15,9 +16,31 @@ type Props = {
 
 const props = defineProps<Props>();
 
-const splittedQuote = computed<string[]>(() => props.value.split(/(?<=,)\s*/));
-const columns = computed<string[]>(() => splittedQuote.value.length * 2);
-const rows = computed<string[]>(() => splittedQuote.value.length);
+const splittedQuote = computed<string[]>(() => {
+  if (props.value.includes(',')) {
+    return props.value.split(/(?<=,)\s*/);
+  } else {
+    const words = props.value.split(/\s+/);
+
+    const baseGroupSize = Math.floor(words.length / FALLBACK_NUM_OF_ROWS);
+    let remainder = words.length % FALLBACK_NUM_OF_ROWS;
+
+    const groups: string[] = [];
+    let start = 0;
+
+    for (let i = 0; i < FALLBACK_NUM_OF_ROWS; i++) {
+      const groupSize = baseGroupSize + (remainder > 0 ? 1 : 0);
+      remainder--;
+
+      groups.push(words.slice(start, start + groupSize).join(' '));
+      start += groupSize;
+    }
+
+    return groups;
+  }
+});
+const columns = computed<number>(() => splittedQuote.value.length * 2);
+const rows = computed<number>(() => splittedQuote.value.length);
 </script>
 
 <style scoped>

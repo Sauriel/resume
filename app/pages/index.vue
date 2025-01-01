@@ -1,6 +1,3 @@
 <template>
-  <UiQuote
-    value="Wer aufhört, besser zu werden, hat aufgehört, gut zu sein."
-    author="Philip Rosenthal"
-  />
+  <UiQuote :value="$t('ui.quote')" author="Philip Rosenthal" />
 </template>

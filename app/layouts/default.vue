@@ -22,45 +22,49 @@
 </template>
 
 <script setup lang="ts">
-import '@fontsource-variable/open-sans';
-import '~/styles/base.css';
 import type { NavEntry } from '~/types';
 
-const pageLinks: NavEntry[] = [
+const { t } = useI18n();
+
+const pageLinks = computed<NavEntry[]>(() => [
   {
     page: 'index',
     icon: 'fa6-solid:house',
   },
   {
     page: 'profile',
-    label: 'Kurzprofil',
+    label: t('ui.nav.profile'),
   },
   {
     page: 'blog',
     path: '/blog',
-    label: 'Blog',
+    label: t('ui.nav.blog'),
   },
-  {
-    page: 'projects',
-    label: 'Projekte',
-  },
+  // {
+  //   page: 'projects',
+  //   label: t('ui.nav.projects'),
+  // },
   {
     page: 'snippets',
-    label: 'Code Snippets',
+    label: t('ui.nav.snippets'),
   },
   {
     page: 'jobs',
-    label: 'Berufserfahrungen',
+    label: t('ui.nav.jobs'),
   },
   {
     page: 'education',
-    label: 'Ausbildung',
+    label: t('ui.nav.education'),
   },
-  {
-    page: 'conferences',
-    label: 'Konferenzen',
-  },
-];
+  // {
+  //   page: 'conferences',
+  //   label: t('ui.nav.conferences'),
+  // },
+  // {
+  //   page: 'certificates',
+  //   label: t('ui.nav.certificates'),
+  // },
+]);
 </script>
 
 <style scoped>

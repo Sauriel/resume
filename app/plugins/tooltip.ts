@@ -15,11 +15,11 @@ function addPopover(el: HTMLElement, payload: TooltipPayload): HTMLDivElement | 
   let popover: HTMLDivElement;
 
   function showPopover() {
-    popover.showPopover();
+    popover?.showPopover();
   }
 
   function hidePopover() {
-    popover.hidePopover();
+    popover?.hidePopover();
   }
   if (payload.text) {
     const popoverWrapper = document.querySelector('#popovers')!;

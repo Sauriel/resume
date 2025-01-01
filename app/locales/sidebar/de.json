@@ -1,0 +1,133 @@
+{
+  "sidebar": {
+    "skills": {
+      "header": "Tech Skills",
+      "skill": {
+        "html": {
+          "label": "HTML",
+          "tooltip": "HTML5, moderne DOM Elemente und APIs wie Dialog, Details und Popover"
+        },
+        "css": {
+          "label": "CSS",
+          "tooltip": "CSS3, Animations, Flex, Grid, etc."
+        },
+        "sass": {
+          "label": "CSS Prepr.",
+          "tooltip": "LESS, SASS, SCSS, CSS in JS"
+        },
+        "js": {
+          "label": "Javascript",
+          "tooltip": "ES6, Arrow functions, Array functions, Template literals, Spread/Rest, Promises"
+        },
+        "rest": {
+          "label": "Rest API"
+        },
+        "git": {
+          "label": "Git",
+          "tooltip": "GitHub, GitLab, CI"
+        },
+        "illustrator": {
+          "label": "Illustrator"
+        },
+        "photoshop": {
+          "label": "Photoshop"
+        },
+        "ts": {
+          "label": "Typescript",
+          "tooltip": "Utility Types, Generics"
+        },
+        "node": {
+          "label": "Node.js",
+          "tooltip": "Express.js, fs"
+        },
+        "electron": {
+          "label": "Electron"
+        },
+        "vue": {
+          "label": "Vue.js",
+          "tooltip": "Version 2 & 3, Vuex, Pinia, Vue Router, Vue i18n, Vuetify"
+        },
+        "graphql": {
+          "label": "GraphQL",
+          "tooltip": "Apollo, gql.tada"
+        },
+        "vitest": {
+          "label": "Jest / Vitest"
+        },
+        "nuxt": {
+          "label": "Nuxt"
+        },
+        "vite": {
+          "label": "Vite",
+          "tooltip": "Custom Plugins"
+        },
+        "docker": {
+          "label": "Docker"
+        },
+        "svelte": {
+          "label": "Svelte",
+          "tooltip": "Version 4 & 5, SvelteKit"
+        },
+        "cypress": {
+          "label": "Cypress"
+        },
+        "astro": {
+          "label": "Astro"
+        },
+        "jquery": {
+          "label": "jQuery"
+        },
+        "acrobat": {
+          "label": "Acrobat"
+        },
+        "indesign": {
+          "label": "InDesign"
+        },
+        "java": {
+          "label": "Java",
+          "tooltip": "JSP, Spring, Spring Boot"
+        },
+        "csharp": {
+          "label": "C#"
+        },
+        "rust": {
+          "label": "Rust",
+          "tooltip": "Hauptsächlich Tauri"
+        },
+        "unix": {
+          "label": "Linux"
+        },
+        "wsl": {
+          "label": "WSL"
+        },
+        "sql": {
+          "label": "SQL",
+          "tooltip": "MySQL, MariaDB, PostgresSQL"
+        },
+        "mongo": {
+          "label": "MongoDB"
+        },
+        "bootstrap": {
+          "label": "Bootstrap"
+        },
+        "unity": {
+          "label": "Unity3D"
+        },
+        "agile": {
+          "label": "Agile",
+          "tooltip": "Scrum, Kanban"
+        },
+        "angular": {
+          "label": "Angular"
+        }
+      },
+      "footer": {
+        "one-year": "1 Jahr",
+        "two-years": "2 Jahre",
+        "three-years": "3+ Jahre",
+        "five-years": "5+ Jahre",
+        "ten-years": "10+ Jahre"
+      }
+    }
+  }
+}

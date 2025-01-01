@@ -1,0 +1,17 @@
+{
+  "education": {
+    "header": "education",
+    "ed1": {
+      "title": "Fachhochschulreife Gestaltung",
+      "description": "Accompanying one-year internship at Medienzirkus Gudrun Schwanck."
+    },
+    "ed2": {
+      "title": "Media designer digital & print",
+      "description": "Specialization in media design. Training company: Medienzirkus Gudrun Schwanck."
+    },
+    "ed3": {
+      "title": "B.SC Media Systems",
+      "description": "Study of media informatics with a focus on new media."
+    }
+  }
+}

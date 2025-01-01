@@ -19,6 +19,10 @@
       <Icon name="fa6-brands:square-xing" />
       xing.com/profile/Sascha_Muenchow/
     </a>
+    <a class="contact-link" href="https://bsky.app/profile/sauriel.net" target="_blank">
+      <Icon name="fa6-brands:bluesky" />
+      @sauriel.net
+    </a>
   </div>
 </template>
 

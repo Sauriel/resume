@@ -1,0 +1,19 @@
+{
+  "ui": {
+    "language-switcher": "Switch to {locale}",
+    "nav": {
+      "profile": "Kurzprofil",
+      "blog": "Blog",
+      "projects": "Projekte",
+      "snippets": "Code Snippets",
+      "jobs": "Berufserfahrungen",
+      "education": "Ausbildung",
+      "conferences": "Konferenzen",
+      "certificates": "Zertifikate"
+    },
+    "quote": "Wer aufhört, besser zu werden, hat aufgehört, gut zu sein.",
+    "year": "ein Jahr | {count} Jahre",
+    "month": "ein Monat | {count} Monate",
+    "and": "und"
+  }
+}

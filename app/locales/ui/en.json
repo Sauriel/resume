@@ -1,0 +1,19 @@
+{
+  "ui": {
+    "language-switcher": "Wechsel zu {locale}",
+    "nav": {
+      "profile": "Profile",
+      "blog": "Blog",
+      "projects": "Projects",
+      "snippets": "Code Snippets",
+      "jobs": "Jobs",
+      "education": "Education",
+      "conferences": "Conferences",
+      "certificates": "Certificates"
+    },
+    "quote": "Anyone who stops improving has stopped being good.",
+    "year": "one year | {count} years",
+    "month": "one month | {count} months",
+    "and": "and"
+  }
+}

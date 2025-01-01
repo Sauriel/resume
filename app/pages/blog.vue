@@ -42,4 +42,8 @@ watch(locale, (newValue, oldValue) => {
   height: 100%;
   overflow-y: auto;
 }
+
+#blog-post > nav {
+  grid-area: nav;
+}
 </style>

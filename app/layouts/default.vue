@@ -18,6 +18,7 @@
     <main>
       <slot />
     </main>
+    <NuxtLink to="/impressum" class="impressum-link">{{ $t('impressum.link') }}</NuxtLink>
   </div>
 </template>
 
@@ -162,5 +163,20 @@ main > div {
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
+}
+
+.impressum-link {
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.5em;
+  color: var(--color-light);
+  font-size: 0.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.4s ease-in-out;
+}
+
+.impressum-link:hover {
+  color: var(--color-primary);
 }
 </style>

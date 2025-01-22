@@ -1,0 +1,16 @@
+{
+  "impressum": {
+    "link": "Impressum",
+    "details": {
+      "header": "Angaben gemäß § 5 TMG:"
+    },
+    "contact": {
+      "header": "Kontakt",
+      "mail": "E-Mail:"
+    },
+    "mediation": {
+      "header": "Streitschlichtung",
+      "text": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr. Meine E-Mail-Adresse finden Sie oben im Impressum. Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+    }
+  }
+}
